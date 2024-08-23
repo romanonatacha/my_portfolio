@@ -1,0 +1,114 @@
+.portfolio-app.light-mode {
+  background-color: $white;
+
+  .header {
+    &_right {
+      background-color: $white;
+      color: $black2;
+
+      .toggle-mode {
+        background: $white2;
+        border: 2px solid $terciary-light;
+        color: $terciary-light;
+        .sun {
+          display: none;
+        }
+      }
+      a:hover {
+        background-color: $white2;
+      }
+    }
+
+    &_left {
+      background-color: $primary-dark;
+    }
+  }
+
+  .header-mb {
+    background-color: $primary-dark;
+    color: $black2;
+
+    .toggle-mode {
+      background-color: transparent;
+      color: $terciary-light;
+      border-color: $terciary-light;
+      .sun {
+        display: none;
+      }
+    }
+
+    .navbar-toggler {
+      border-color: rgb(174, 174, 174);
+    }
+  }
+
+  .base {
+    .title {
+      color: $black2;
+    }
+
+    &_right {
+      background-color: $white;
+      color: $black2;
+    }
+
+    &_left {
+      background-color: $primary-dark;
+    }
+  }
+
+  .default {
+    color: $black2;
+  }
+
+  .portfolio {
+    .card {
+      background-color: $white2;
+      color: $black2;
+
+      .badge {
+        background-color: $white !important;
+        color: $terciary-dark;
+      }
+
+      .git {
+        color: $terciary-dark;
+      }
+
+      &:hover {
+        filter: drop-shadow(2px 4px 6px rgb(143, 143, 143));
+      }
+    }
+  }
+  .skills .bar .face {
+    background-color: rgba(216, 216, 216, 0.3);
+  }
+
+  .skills-levels {
+    background-color: $white2;
+  }
+
+  .about {
+    background-color: $secondary-dark;
+    color: $black2;
+  }
+
+  .feedbacks {
+    &__slide {
+      background-color: $secondary-dark;
+      color: $black2;
+    }
+  }
+
+  #social-sidebar a:hover,
+  #social-sidebar a:hover .icon,
+  #social-sidebar a span,
+  #social-sidebar a span:before {
+    background: $white2;
+    color: $terciary-dark;
+  }
+
+  .footer {
+    color: $black2;
+  }
+}

@@ -1,0 +1,36 @@
+.feedbacks {
+    width: 70%;
+    padding: 64px;
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+
+    @include max767 {
+        width: 100%;
+        padding: 24px;
+    }
+
+    &__slide {
+        padding: 24px;
+        min-height: 300px;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        svg {
+            color: $terciary-dark;
+        }
+
+        span {
+            font-style: italic;
+            opacity: 0.6;
+        }
+    }
+    .slick-prev:before, .slick-next:before {
+        color: $terciary-dark;
+    }
+
+    .slick-dots li button:before {
+        font-size: 14px;
+    }
+}

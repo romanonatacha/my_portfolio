@@ -1,0 +1,100 @@
+.portfolio-app.dark-mode {
+  background-color: $black;
+
+  .header {
+    &_right {
+      background-color: $black;
+      color: $white;
+
+      .toggle-mode {
+        background: $black2;
+        border: 2px solid $secondary-light;
+        color: $secondary-light;
+        .moon {
+          display: none;
+        }
+      }
+
+      a:hover {
+        background-color: $black2;
+      }
+    }
+
+    &_left {
+      background-color: $primary-light;
+    }
+  }
+
+  .header-mb {
+    background-color: $primary-light;
+    color: $white;
+
+    .toggle-mode {
+      .moon {
+        display: none;
+      }
+    }
+  }
+
+  .base {
+    .title {
+      color: $white;
+    }
+
+    &_right {
+      background-color: $black;
+      color: $white;
+    }
+
+    &_left {
+      background-color: $primary-light;
+    }
+  }
+
+  .default {
+    color: $white;
+  }
+
+  .portfolio {
+    .card {
+      background-color: $black2;
+      color: $white;
+
+      .badge {
+        background-color: $secondary-light !important;
+        color: $black2;
+      }
+
+      .git {
+        color: $terciary-light;
+      }
+
+      &:hover {
+        filter: drop-shadow(2px 4px 6px black);
+      }
+    }
+  }
+  .skills-levels {
+    background-color: $black2;
+  }
+
+  .about {
+    background-color: $black2;
+    color: $white;
+  }
+
+  .feedbacks {
+    &__slide {
+      background-color: $black2;
+      color: $white;
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: $white;
+    }
+
+    .slick-dots li button:before {
+      color: $white;
+    }
+  }
+}

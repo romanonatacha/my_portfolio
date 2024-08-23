@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css?family=Megrim');
+
+.skills {
+  .info {
+    margin: 64px auto 0;
+    width: 100%;
+    opacity: 0.6;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 80px;
+  }
+
+  .item1 {
+    --animation: neon1;
+    --color: cyan;
+    --radial-bg: radial-gradient(rgba(0, 255, 255, 0.2) 10%, transparent 40%);
+  }
+
+  .item2 {
+    --animation: neon2;
+    --color: yellow;
+    --radial-bg: radial-gradient(rgba(255, 255, 0, 0.2) 10%, transparent 40%);
+  }
+
+  .item3 {
+    --animation: neon3;
+    --color: magenta;
+    --radial-bg: radial-gradient(rgba(255, 0, 255, 0.2) 20%, transparent 40%);
+  }
+
+  /***********************
+  * item
+  ***********************/
+  .item {
+    font-weight: 300;
+    display: inline-block;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 130ms cubic-bezier(0.4, 1, 0.8, 1.8);
+    z-index: 1;
+    padding: $gutter * 2;
+    margin: 0;
+  }
+  .item::before {
+    bottom: 50%;
+    content: '';
+    left: 50%;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    z-index: -1;
+  }
+  .item:hover {
+    animation: var(--animation) 2s forwards;
+    opacity: 1;
+  }
+  .item:hover::before {
+    background: var(--radial-bg);
+    bottom: -50%;
+    left: -50%;
+    pointer-events: none;
+    right: -50%;
+    top: -50%;
+  }
+
+  /***********************
+  * ANIMATIONS
+  ***********************/
+  @-webkit-keyframes neon1 {
+    0%,
+    11%,
+    13%,
+    17%,
+    19%,
+    100% {
+      text-shadow: 0px 0px 15px cyan;
+    }
+    12%,
+    18% {
+      text-shadow: 0 0 0px #fff;
+    }
+  }
+  @keyframes neon1 {
+    0%,
+    11%,
+    13%,
+    17%,
+    19%,
+    100% {
+      text-shadow: 0px 0px 15px cyan;
+    }
+    12%,
+    18% {
+      text-shadow: 0 0 0px #fff;
+    }
+  }
+  @-webkit-keyframes neon2 {
+    0%,
+    11%,
+    13%,
+    17%,
+    19%,
+    100% {
+      text-shadow: 0px 0px 15px yellow;
+    }
+    12%,
+    18% {
+      text-shadow: 0 0 0px #fff;
+    }
+  }
+  @keyframes neon2 {
+    0%,
+    11%,
+    13%,
+    17%,
+    19%,
+    100% {
+      text-shadow: 0px 0px 15px yellow;
+    }
+    12%,
+    18% {
+      text-shadow: 0 0 0px #fff;
+    }
+  }
+  @-webkit-keyframes neon3 {
+    0%,
+    11%,
+    13%,
+    17%,
+    19%,
+    100% {
+      text-shadow: 0px 0px 15px magenta;
+    }
+    12%,
+    18% {
+      text-shadow: 0 0 0px #fff;
+    }
+  }
+  @keyframes neon3 {
+    0%,
+    11%,
+    13%,
+    17%,
+    19%,
+    100% {
+      text-shadow: 0px 0px 15px magenta;
+    }
+    12%,
+    18% {
+      text-shadow: 0 0 0px #fff;
+    }
+  }
+
+  $yellow: yellow;
+  $navy: #0a4069;
+  $cyan: cyan;
+  $magenta: magenta;
+  $white: #fefefe;
+  $gray: #444;
+  $lightGray: lighten($gray, 30);
+
+  $transitionDuration: 1s;
+  $transition: all $transitionDuration ease-in-out;
+
+  input {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    padding: 0;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    article {
+      align-self: center;
+      width: 20em;
+      margin-bottom: 2em;
+      p,
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .container {
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    justify-content: center;
+
+    margin-bottom: 4em;
+  }
+
+  /*
+  *
+  *
+  START // CHART'S RULES
+  -> "if you're picking code, don't forget the variables :)"
+  */
+
+  .break {
+    flex-basis: 100%;
+  }
+
+  .chart {
+    font-size: 1em;
+    display: none;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    backface-visibility: visible;
+    align-self: center;
+    width: 20em;
+  }
+
+  $faceColor: rgba($white, 0.3);
+  $growColor: rgba($magenta, 0.6);
+
+  .bar {
+    font-size: 1em;
+
+    position: relative;
+
+    height: 10em;
+
+    transition: $transition;
+    transform: rotateX(60deg) rotateY(0deg);
+
+    transform-style: preserve-3d;
+
+    .face {
+      font-size: 2em;
+
+      position: relative;
+
+      width: 100%;
+      height: 2em;
+
+      background-color: $faceColor;
+
+      &.side-a,
+      &.side-b {
+        width: 2em;
+      }
+    }
+    .side-a {
+      transform: rotateX(90deg) rotateY(-90deg) translateX(2em) translateY(1em) translateZ(1em);
+    }
+    .side-b {
+      transform: rotateX(90deg) rotateY(-90deg) translateX(4em) translateY(1em) translateZ(-1em);
+      position: absolute;
+      right: 0;
+    }
+    .side-0 {
+      transform: rotateX(90deg) rotateY(0) translateX(0) translateY(1em) translateZ(-1em);
+    }
+    .side-1 {
+      transform: rotateX(90deg) rotateY(0) translateX(0) translateY(1em) translateZ(3em);
+    }
+    .top {
+      transform: rotateX(0deg) rotateY(0) translateX(0em) translateY(4em) translateZ(2em);
+    }
+    // .floor
+    // {
+    //     box-shadow: 0 .1em 0.6em rgba(0,0,0,.3), .6em -0.5em 3em rgba(0,0,0,.3), 1em -1em 8em $white;
+    // }
+  }
+
+  .growing-bar {
+    transition: $transition;
+    background-color: $terciary-light;
+    width: 100%;
+    height: 2em;
+  }
+
+  @mixin drawSkin($color, $name) {
+    .bar.#{$name} {
+      .side-a,
+          // &.bar-100 .side-b,
+          .growing-bar {
+        background-color: rgba($color, 0.6);
+      }
+      .side-0 .growing-bar {
+        box-shadow: -0.5em -1.5em 4em $color;
+      }
+      .floor .growing-bar {
+        box-shadow: 0em 0em 2em $color;
+      }
+    }
+  }
+
+  @mixin drawFaces($color, $name) {
+    .chart .bar.#{$name} .face {
+      background-color: rgba($color, 0.2);
+    }
+  }
+
+  @include drawSkin(rgba($yellow, 0.8), 'yellow');
+  @include drawSkin(rgba($magenta, 0.8), 'magenta');
+  @include drawSkin($cyan, 'cyan');
+  @include drawSkin(rgba($navy, 0.8), 'navy');
+  @include drawSkin($yellow, 'yellow');
+  @include drawSkin($white, 'white');
+  @include drawSkin($gray, 'gray');
+
+  @include drawFaces(rgba($yellow, 0.6), 'yellow-face');
+  @include drawFaces($yellow, 'yellow-face');
+  @include drawFaces(rgba($magenta, 0.6), 'magenta-face');
+  @include drawFaces(rgba($navy, 0.6), 'navy-face');
+  @include drawFaces($cyan, 'cyan-face');
+  @include drawFaces($gray, 'gray-face');
+  @include drawFaces($lightGray, 'lightGray-face');
+
+  @for $i from 0 to 101 {
+    .bar-#{$i} {
+      .growing-bar {
+        width: percentage($i/100);
+      }
+    }
+  }
+
+  /*
+  END // CHART'S RULES
+  *
+  *
+  */
+
+  .chart.grid {
+    display: flex;
+    flex-direction: row;
+    .exercise {
+      flex: 0 0 100%;
+      display: flex;
+      .bar {
+        flex: 1;
+        margin: 0 0.5em;
+        &:nth-child(2) {
+          z-index: 8;
+          flex: 1 0 40%;
+        }
+        &:first-child {
+          z-index: 10;
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  input:checked ~ .chart {
+    display: block;
+  }
+
+  input:checked ~ .info {
+    display: none;
+  }
+
+  input[id='html']:checked ~ span label[for='html'],
+  input[id='javascript']:checked ~ span label[for='javascript'],
+  input[id='css']:checked ~ span label[for='css'],
+  input[id='react']:checked ~ span label[for='react'],
+  input[id='angular']:checked ~ span label[for='angular'],
+  input[id='jquery']:checked ~ span label[for='jquery'],
+  input[id='python']:checked ~ span label[for='python'],
+  input[id='bootstrap']:checked ~ span label[for='bootstrap'],
+  input[id='dash']:checked ~ span label[for='dash'],
+  input[id='git']:checked ~ span label[for='git'],
+  input[id='sass']:checked ~ span label[for='sass'],
+  input[id='gulp']:checked ~ span label[for='gulp'] {
+    animation: var(--animation) 2s forwards;
+    opacity: 1;
+
+    &:before {
+      background: var(--radial-bg);
+      bottom: -50%;
+      left: -50%;
+      pointer-events: none;
+      right: -50%;
+      top: -50%;
+    }
+  }
+
+  input[id='html']:checked ~ .chart {
+    @extend .bar, .cyan;
+    @extend .bar-100;
+  }
+  input[id='javascript']:checked ~ .chart {
+    @extend .bar, .yellow;
+    @extend .bar-75;
+  }
+  input[id='css']:checked ~ .chart {
+    @extend .bar, .magenta;
+    @extend .bar-100;
+  }
+
+  input[id='react']:checked ~ .chart {
+    @extend .bar, .cyan;
+    @extend .bar-75;
+  }
+
+  input[id='angular']:checked ~ .chart {
+    @extend .bar, .yellow;
+    @extend .bar-50;
+  }
+
+  input[id='jquery']:checked ~ .chart {
+    @extend .bar, .magenta;
+    @extend .bar-75;
+  }
+
+  input[id='python']:checked ~ .chart {
+    @extend .bar, .cyan;
+    @extend .bar-25;
+  }
+
+  input[id='bootstrap']:checked ~ .chart {
+    @extend .bar, .yellow;
+    @extend .bar-75;
+  }
+
+  input[id='dash']:checked ~ .chart {
+    @extend .bar, .magenta;
+    @extend .bar-25;
+  }
+
+  input[id='git']:checked ~ .chart {
+    @extend .bar, .cyan;
+    @extend .bar-75;
+  }
+
+  input[id='sass']:checked ~ .chart {
+    @extend .bar, .yellow;
+    @extend .bar-75;
+  }
+
+  input[id='gulp']:checked ~ .chart {
+    @extend .bar, .magenta;
+    @extend .bar-50;
+  }
+
+  input[id='node']:checked ~ .chart {
+    @extend .bar, .cyan;
+    @extend .bar-25;
+  }
+
+  input[id='typescript']:checked ~ .chart {
+    @extend .bar, .yellow;
+    @extend .bar-50;
+  }
+}
+
+.dark-mode .skills {
+  .item {
+    color: var(--color);
+  }
+}
+
+.skills-levels {
+  .chart2 {
+    width: 10em;
+
+    .bar {
+      transform: unset;
+      height: auto;
+
+      -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+
+      .face {
+        height: 1em;
+        &.floor {
+          display: none;
+        }
+
+        .growing-bar {
+          height: 1em;
+        }
+      }
+    }
+  }
+
+  .skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 0;
+  }
+}

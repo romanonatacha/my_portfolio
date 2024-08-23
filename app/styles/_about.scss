@@ -1,0 +1,37 @@
+.about {
+    width: 70%;
+    padding: 64px;
+    margin: 0 auto;
+
+    @include max767 {
+        width: 100%;
+        padding: 24px;
+    }
+
+    &-title  {
+        width: 70%;
+        margin: 0 auto;
+        @include max767 {
+            width: 100%;
+        }
+    }
+    
+    &.info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        img {
+            width: 24px;
+            height: 24px;
+            vertical-align: bottom;
+            margin-right: 8px;
+        }
+
+        .icon {
+            vertical-align: bottom;
+            margin-left: $gutter;
+        }
+    }
+    
+}

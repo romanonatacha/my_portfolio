@@ -1,0 +1,27 @@
+    $primary-dark: #f6eee9;
+    $primary-light: #333;
+    
+    $secondary-dark: #f6eee9;
+    $secondary-light: #fff8f5;
+    
+    $terciary-dark: rgb(255, 145, 113);
+    $terciary-light: rgb(255, 145, 113);
+    
+    $black: #232323;
+    $black2: #333;
+    $white: #fff8f5;
+    $white2: #f6eee9;
+
+    $gutter: 8px;
+
+    @mixin max767 {
+        @media screen and (max-width: 767px) {
+            @content
+        }
+    }
+
+    @mixin max1200 {
+        @media screen and (max-width: 1200px) {
+            @content
+        }
+    }
