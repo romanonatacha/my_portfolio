@@ -6,6 +6,12 @@ import './styles/main.scss';
 export const metadata: Metadata = {
   title: 'natacha romano | portfolio',
   description: 'front-end developer, software engineer, css specialist and web designer.',
+  icons: [
+    {
+      rel: 'icon',
+      url: '/favicon.ico',
+    },
+  ],
 };
 
 export default function RootLayout({
