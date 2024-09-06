@@ -21,7 +21,7 @@ const experience = [
             Developing an open source Dash component library (link bellow). 
             Technologies: Python, Plotly Dash, React, CSS.`,
     link: 'https://trich.ai',
-    badges: ['May 2020', 'Present'],
+    badges: ['May 2020', 'Apr 2021'],
   },
   {
     image: '/images/cvc.png',
