@@ -24,6 +24,10 @@ const skills = [
     bar: 'bar-75',
   },
   {
+    name: 'material ui',
+    bar: 'bar-75',
+  },
+  {
     name: 'gatsby',
     bar: 'bar-75',
   },
